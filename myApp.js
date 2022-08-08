@@ -30,8 +30,12 @@ const createAndSavePerson = (done) => {
     age: 20,
     favoriteFoods: ["apple", "banana"]
   })
-  person.save()
-  done(null /*, data*/);
+  person.save((err, data) => {
+    if(err) console.log(err)
+    else {
+      done(null, data)
+    }
+  })
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
