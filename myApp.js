@@ -24,6 +24,14 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 
 const createAndSavePerson = (done) => {
+  var person = new Person({
+    name: "a",
+    age: 20,
+    favoriteFoods: ["apple", "banana"]
+  })
+  person.save((err, data) => {
+    
+  })
   done(null /*, data*/);
 };
 
