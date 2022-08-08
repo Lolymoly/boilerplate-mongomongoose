@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const Db = require('mongodb/lib/db');
 const mongoose = require('mongoose')
 
 
@@ -29,9 +30,7 @@ const createAndSavePerson = (done) => {
     age: 20,
     favoriteFoods: ["apple", "banana"]
   })
-  person.save((err, data) => {
-    
-  })
+  person.save()
   done(null /*, data*/);
 };
 
